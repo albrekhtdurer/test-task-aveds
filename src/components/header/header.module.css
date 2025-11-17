@@ -17,6 +17,7 @@
   font-size: 15px;
   line-height: 24px;
   color: rgba(115, 115, 115, 1);
+  border-radius: 4px;
 }
 
 .header__link:is(:hover, :focus) {
