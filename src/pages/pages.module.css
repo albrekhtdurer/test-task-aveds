@@ -1,0 +1,19 @@
+.headline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 58px;
+  font-weight: 700;
+  color: rgba(37, 43, 66, 1);
+  line-height: 80px;
+  max-width: 727px;
+}
+
+.buttons_container {
+    display: flex;
+    gap: 10px;
+}
+
+.card__container {
+  margin-top: 96.5px;
+  display: flex;
+  gap: 20px;
+}

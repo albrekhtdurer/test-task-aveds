@@ -1,8 +1,11 @@
 .button {
   font-family: 'Montserrat', sans-serif;
   color: rgba(255, 104, 91, 1);
+  background-color: transparent;
   border: solid 2px rgba(255, 104, 91, 1);
   padding: 15px 40px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .button:is(:hover, :focus) {

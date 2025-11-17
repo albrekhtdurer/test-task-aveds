@@ -1,11 +1,16 @@
-import './App.css'
-import { Header } from './components/header/header'
+import { Header } from "./components/header/header";
+import { Main } from "./pages/main";
+import styles from "./App.module.css";
 
 function App() {
-
   return (
-    <Header></Header>
-  )
+    <>
+      <Header></Header>
+      <div className={styles.content}>
+        <Main></Main>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
