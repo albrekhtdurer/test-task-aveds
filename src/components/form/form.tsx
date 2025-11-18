@@ -2,7 +2,7 @@ import { useState, type FC } from "react";
 import { Button } from "../button/button";
 import styles from './form.module.css';
 import { login } from "../../utils/utils";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Form: FC = () => {
   const nameState = {
