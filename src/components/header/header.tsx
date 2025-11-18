@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg'
 import styles from './header.module.css';
+import type { FC } from 'react';
 
-export const Header = () => {
+export const Header: FC = () => {
   return (
     <header className={styles.header}>
       <img alt='логотип' src={logo}></img>

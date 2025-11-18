@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import styles from './card.module.css';
 
 type CardProps = {
@@ -6,7 +7,7 @@ type CardProps = {
   text: string;
 }
 
-export const Card = (props: CardProps) => {
+export const Card: FC<CardProps> = (props) => {
   const {imageUrl, title, text} = props;
   return (
     <div className={styles.card}>

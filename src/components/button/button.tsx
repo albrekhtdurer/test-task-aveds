@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import styles from './button.module.css';
 
 type ButtonProps = {
@@ -5,7 +6,7 @@ type ButtonProps = {
   onClick: () => void;
 }
 
-export const Button = (props: ButtonProps) => {
+export const Button: FC<ButtonProps> = (props) => {
   const {children, onClick} = props;
   return <button onClick={onClick} className={styles.button}>{children}</button>;
 }
