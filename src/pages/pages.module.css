@@ -21,20 +21,13 @@
 
 @media (width <= 375px) {
   .headline {
-    font-size: 28px;
     max-width: 355px;
+    margin-bottom: 45px;
   }
 
   .card__container {
     flex-direction: column;
-  }
-}
-
-@media(width<=375px) {
-  .headline {
-    margin-bottom: 45px;
-  }
-  .card__container {
     margin-left: 14px;
+
   }
 }
