@@ -6,16 +6,20 @@ import storyUrl from '../assets/story.svg';
 
 import styles from "./pages.module.css";
 import { Card } from "../components/card/card";
+import { useNavigate } from "react-router-dom";
 
 export const Main: FC = () => {
+  const navigate = useNavigate();
+  const onClickLogin = () => navigate('/login');
+  const onClickContacts = () => navigate('/contacts');
   return (
     <>
       <h1 className={styles.headline}>
         Место для получения медицинской помощи
       </h1>
       <div className={styles.buttons_container}>
-        <Button>Войти</Button>
-        <Button>Контакты</Button>
+        <Button onClick={onClickLogin}>Войти</Button>
+        <Button onClick={onClickContacts}>Контакты</Button>
       </div>
       <div className={styles.card__container}>
         <Card title='Онлайн-прием' imageUrl={heartUrl} text="Рыба текст"></Card>
