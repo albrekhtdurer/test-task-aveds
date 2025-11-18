@@ -9,7 +9,7 @@ export const Header: FC = () => {
       <Link to='/'><img alt='логотип' src={logo}></img></Link>
       <div className={styles.header__link_container}>
       <Link to='/contacts' className={styles.header__link}>Контакты</Link>
-      <Link to='/login' state={{background: '/'}} className={styles.header__link}>Войти</Link>
+      <Link to='/login' className={styles.header__link}>Войти</Link>
       </div>
     </header>
   );

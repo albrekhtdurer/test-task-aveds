@@ -26,7 +26,7 @@ function App() {
                 path='/login'
                 element={<Modal title='Авторизация' onClose={onModalClose}><Form></Form></Modal>}
               />
-          </Routes>
+            </Routes>
       )}
       </div>
     </>
