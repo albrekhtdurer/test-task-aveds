@@ -8,6 +8,7 @@ import { Modal } from "./components/modal/modal";
 import { User } from "./pages/user";
 import { checkAuthorization } from "./utils/utils";
 import { useEffect, useState } from "react";
+import { ProtectedRoute } from "./components/protectedRoute/protectedRoute";
 
 type User = {
   name: string;
@@ -27,7 +28,9 @@ function App() {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setUserData(result);
     }
-  }, [])
+  }, []);
+  
+  const isAuthorized = Boolean(userData?.name && userData.login);
 
   return (
     <>
@@ -40,6 +43,7 @@ function App() {
         </Routes>
         {state?.background && (
           <Routes>
+            <Route element={<ProtectedRoute isAuthorized={isAuthorized}/>}>
             <Route
               path="/login"
               element={
@@ -48,6 +52,7 @@ function App() {
                 </Modal>
               }
             />
+            </Route>
           </Routes>
         )}
       </div>
