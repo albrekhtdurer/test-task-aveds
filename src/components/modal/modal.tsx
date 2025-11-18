@@ -2,7 +2,8 @@ import { memo, useEffect, type FC, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import styles from './modal.module.css';
 import { ModalOverlay } from "../modalOverlay/modalOverlay";
-import { Button } from "../button/button";
+import closeUrl from '../../assets/x-close-delete-svgrepo-com.svg'
+
 
 type ModalProps = {
   title: string;
@@ -27,10 +28,10 @@ export const Modal: FC<ModalProps> = memo(({ title, onClose, children }) => {
   const modalContent = (
     <>
       <div className={styles.modal}>
+          <button onClick={onClose} className={styles.modal__close_button}><img className={styles.modal__close_button_image} src={closeUrl}></img></button>
           <h3 className={styles.title}>
             {title}
           </h3>
-          <Button onClick={onClose}>Закрыть</Button>
         <div>{children}</div>
       </div>
       <ModalOverlay onClick={onClose} />

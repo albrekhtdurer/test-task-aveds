@@ -6,11 +6,12 @@ import storyUrl from '../assets/story.svg';
 
 import styles from "./pages.module.css";
 import { Card } from "../components/card/card";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Main: FC = () => {
   const navigate = useNavigate();
-  const onClickLogin = () => navigate('/login');
+  const location = useLocation();
+  const onClickLogin = () => navigate('/login', {state: {background: location}});
   const onClickContacts = () => navigate('/contacts');
   return (
     <>

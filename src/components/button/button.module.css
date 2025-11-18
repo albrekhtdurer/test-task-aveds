@@ -7,6 +7,7 @@
   font-size: 14px;
   font-weight: 700;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .button:is(:hover, :focus) {

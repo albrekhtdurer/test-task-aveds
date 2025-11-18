@@ -6,6 +6,11 @@
   margin: auto;
   background-color: var(--bg-color);
   transform: translate(-50%, -50%);
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -14,4 +19,19 @@
     font-weight: 700;
     font-size: clamp(1.75rem, 1.0898rem + 2.8169vw, 3.625rem);
     line-height: 1.4;
+    padding-bottom: 20px;
   }
+
+.modal__close_button{
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  max-width: 20px;
+  max-height: 20px;
+  cursor: pointer;
+}
+
+.modal__close_button_image {
+  max-width: 20px;
+  max-height: 20px;
+}
