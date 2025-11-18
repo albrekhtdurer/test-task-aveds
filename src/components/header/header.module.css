@@ -15,9 +15,10 @@
   font-weight: 600;
   font-size: 15px;
   line-height: 24px;
-  color: rgb(2, 0, 0);
+  color: var(--text-color);
   border-radius: 10px;
   letter-spacing: 0.2px;
+  text-decoration: none;
 }
 
 .header__link:is(:hover, :focus) {

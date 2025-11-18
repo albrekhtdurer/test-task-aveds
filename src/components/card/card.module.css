@@ -28,7 +28,7 @@
 }
 
 .card__text {
-  color: rgba(115, 115, 115, 1);
+  color: var(--text-color);
   font-family: var(--main-font), sans-serif;
   font-weight: 400;
   font-size: 14px;
