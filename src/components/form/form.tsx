@@ -3,8 +3,13 @@ import { Button } from "../button/button";
 import styles from './form.module.css';
 import { login } from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
+import type { User } from "../../App";
 
-export const Form: FC = () => {
+type FormProps = {
+  updateUserData: (data: User) => void;
+}
+
+export const Form: FC<FormProps> = ({updateUserData}) => {
   const nameState = {
     value: '',
     errorText: '',
@@ -50,11 +55,10 @@ export const Form: FC = () => {
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     const result = login(nameValue.value, passwordValue.value);
-    console.log(result);
     if (result.error) {
       setAuthErrorValue(result.error);
-    } else {
-      console.log('aaaa');
+    } else if(result?.user?.name && result?.user?.login) {
+      updateUserData({name: result.user.name, login: result.user.login})
       navigate('/user');
     }
   };

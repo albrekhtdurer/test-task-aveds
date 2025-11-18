@@ -6,11 +6,11 @@ import { Contacts } from "./pages/contacts";
 import { Form } from "./components/form/form";
 import { Modal } from "./components/modal/modal";
 import { User } from "./pages/user";
-import { checkAuthorization } from "./utils/utils";
+import { checkAuthorization, logout } from "./utils/utils";
 import { useEffect, useState } from "react";
 import { ProtectedRoute } from "./components/protectedRoute/protectedRoute";
 
-type User = {
+export type User = {
   name: string;
   login: string;
 };
@@ -29,6 +29,12 @@ function App() {
       setUserData(result);
     }
   }, []);
+
+  const logoutHandler = () => {
+    logout();
+    setUserData(null);
+    navigate('/');
+  }
   
   const isAuthorized = Boolean(userData?.name && userData.login);
 
@@ -39,7 +45,7 @@ function App() {
         <Routes location={state?.background || location}>
           <Route path="/" element={<Main />} />
           <Route path="/contacts" element={<Contacts />} />
-          <Route path="/user" element={<User name={userData?.name || ''} />}/>
+          <Route path="/user" element={<User name={userData?.name || ''} logoutHandler={logoutHandler}/>}/>
         </Routes>
         {state?.background && (
           <Routes>
@@ -48,7 +54,7 @@ function App() {
               path="/login"
               element={
                 <Modal title="Авторизация" onClose={onModalClose}>
-                  <Form></Form>
+                  <Form updateUserData={setUserData}></Form>
                 </Modal>
               }
             />

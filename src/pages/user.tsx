@@ -2,21 +2,16 @@ import type { FC } from "react";
 import { Button } from "../components/button/button";
 
 import styles from "./pages.module.css";
-import { logout } from "../utils/utils";
 import { useNavigate } from "react-router-dom";
 
 type UserProps = {
+  logoutHandler: () => void;
   name: string;
 }
 
 export const User: FC<UserProps> = (props) => {
-  const {name} = props;
+  const {name, logoutHandler} = props;
   const navigate = useNavigate();
-  const onCLickLogout = () => {
-    logout();
-    navigate('/');
-  }
-
   const onClickContacts = () => {
     navigate('/contacts');
   }
@@ -27,7 +22,7 @@ export const User: FC<UserProps> = (props) => {
         Привет, {name}
       </h1>
       <div className={styles.buttons_container}>
-        <Button onClick={onCLickLogout}>Выйти из аккаунта</Button>
+        <Button onClick={logoutHandler}>Выйти из аккаунта</Button>
         <Button onClick={onClickContacts}>Перейти в контакты</Button>
       </div>
     </>
