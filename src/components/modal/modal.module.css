@@ -1,0 +1,17 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  margin: auto;
+  background-color: var(--bg-color);
+  transform: translate(-50%, -50%);
+}
+
+.title {
+    color: var(--headlines-color);
+    font-family: var(--main-font), sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 1.0898rem + 2.8169vw, 3.625rem);
+    line-height: 1.4;
+  }

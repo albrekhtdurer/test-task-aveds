@@ -15,6 +15,14 @@ function App() {
             <Route path='/' element={<Main />} />
             <Route path='/contacts' element={<Contacts />} />
       </Routes>
+      {state?.background && (
+            <Routes>
+              <Route
+                path='/login'
+                element={}
+              />
+          </Routes>
+      )}
       </div>
     </>
   );
