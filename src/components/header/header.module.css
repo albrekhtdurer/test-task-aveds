@@ -1,5 +1,5 @@
 .header {
-  padding: 15px 60px;
+  padding: 18px clamp(0.625rem, -0.6954rem + 5.6338vw, 4.375rem);
   display: flex;
   justify-content: space-between;
   border-bottom: solid 2px rgba(0,0,0,1);
@@ -27,4 +27,10 @@
   color: rgba(255, 104, 91, 1);
   border: solid 2px rgba(255,104,91,1);
   font-weight: 500;
+}
+
+@media(width<=375px) {
+  .header {
+    justify-content: space-between;
+  }
 }

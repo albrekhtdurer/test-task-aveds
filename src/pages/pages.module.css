@@ -1,11 +1,11 @@
 .headline {
   font-family: 'Montserrat', sans-serif;
-  font-size: 58px;
+  font-size: clamp(1.75rem, 1.0898rem + 2.8169vw, 3.625rem);
   font-weight: 700;
   color: rgba(37, 43, 66, 1);
-  line-height: 80px;
+  line-height: 1.4;
   max-width: 727px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .buttons_container {
@@ -14,7 +14,27 @@
 }
 
 .card__container {
-  margin-top: 100px;
+  margin-top: clamp(1.6875rem, 0.191rem + 6.385vw, 5.9375rem);
   display: flex;
-  gap: 20px;
+  gap: 30px;
+}
+
+@media (width <= 375px) {
+  .headline {
+    font-size: 28px;
+    max-width: 355px;
+  }
+
+  .card__container {
+    flex-direction: column;
+  }
+}
+
+@media(width<=375px) {
+  .headline {
+    margin-bottom: 45px;
+  }
+  .card__container {
+    margin-left: 14px;
+  }
 }
