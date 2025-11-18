@@ -1,8 +1,8 @@
 import usersData from "./constants/users.json" assert { type: "json" };
 
 export const checkAuthorization = () => {
-  const userName = localStorage.getItem('userName');
-  const userLogin = localStorage.getItem('userLogin');
+  const userName = localStorage.getItem('userName') || '';
+  const userLogin = localStorage.getItem('userLogin') || '';
 
   return {
     name: userName,
@@ -29,7 +29,6 @@ export const login = (login: string, password: string) => {
   if (!result.error && result.user) {
     localStorage.setItem('userName', result.user.name);
     localStorage.setItem('userLogin', result.user.login);
-
   }
   return result;
 };

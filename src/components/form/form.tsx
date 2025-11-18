@@ -1,6 +1,8 @@
 import { useState, type FC } from "react";
 import { Button } from "../button/button";
 import styles from './form.module.css';
+import { login } from "../../utils/utils";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const Form: FC = () => {
   const nameState = {
@@ -14,7 +16,7 @@ export const Form: FC = () => {
     errorText: '',
     error: false,
   }
-
+  const navigate = useNavigate();
   const [nameValue, setNameValue] = useState(nameState);
   const [passwordValue, setPasswordValue] = useState(passwordState);
   const [authErrorValue, setAuthErrorValue] = useState('');
@@ -47,8 +49,14 @@ export const Form: FC = () => {
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    setAuthErrorValue('');
-
+    const result = login(nameValue.value, passwordValue.value);
+    console.log(result);
+    if (result.error) {
+      setAuthErrorValue(result.error);
+    } else {
+      console.log('aaaa');
+      navigate('/user');
+    }
   };
 
   return (
@@ -81,7 +89,7 @@ export const Form: FC = () => {
         </span>
         </label>
       </fieldset>
-      <Button type='submit' disabled={isFormValid}>Войти</Button>
+      <Button type='submit' disabled={!isFormValid}>Войти</Button>
       <span className={styles.form__error_text}>{authErrorValue || ""}</span>
     </form>
   )
