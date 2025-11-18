@@ -1,8 +1,5 @@
 .button {
   font-family: var(--main-font), sans-serif;
-  color: var(--accent-color);
-  background-color: transparent;
-  border: solid 2px var(--accent-color);
   padding: 15px 40px;
   font-size: 14px;
   font-weight: 700;
@@ -10,7 +7,20 @@
   cursor: pointer;
 }
 
-.button:is(:hover, :focus) {
+.button_enabled:is(:hover, :focus) {
   color: var(--bg-color);
   background-color:  var(--accent-color);
+}
+
+.button_enabled {
+  color: var(--accent-color);
+  background-color: transparent;
+  border: solid 2px var(--accent-color);
+}
+
+.button_disabled {
+  background-color: rgba(155,155,155,0.5);
+  color: var(--bg-color);
+  cursor: 'not-allowed';
+  border: none;
 }
