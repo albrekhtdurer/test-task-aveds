@@ -5,6 +5,7 @@
   color: rgba(37, 43, 66, 1);
   line-height: 80px;
   max-width: 727px;
+  margin-bottom: 30px;
 }
 
 .buttons_container {
@@ -13,7 +14,7 @@
 }
 
 .card__container {
-  margin-top: 96.5px;
+  margin-top: 100px;
   display: flex;
   gap: 20px;
 }
