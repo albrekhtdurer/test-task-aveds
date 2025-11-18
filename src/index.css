@@ -19,6 +19,13 @@
   font-style: normal;
 }
 
+:root {
+  --bg-color: rgba(255, 255, 255, 1);
+  --accent-color: rgba(255, 104, 91, 1);
+  --headlines-color: rgba(37, 43, 66, 1);
+  --main-font: 'Montserrat';
+}
+
 *,
 *::before,
 *::after {

@@ -21,10 +21,10 @@
 }
 
 .header__link:is(:hover, :focus) {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--main-font), sans-serif;
   font-size: 20px;
   line-height: 1;
-  color: rgba(255, 104, 91, 1);
-  border: solid 2px rgba(255,104,91,1);
+  color: var(--accent-color);
+  border: solid 2px var(--accent-color);
   font-weight: 500;
 }

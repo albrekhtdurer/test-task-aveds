@@ -10,7 +10,8 @@
 }
 
 .card__title {
-  font-family: 'Montserrat', sans-serif;
+  color: var(--headlines-color);
+  font-family: var(--main-font), sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 700;
@@ -22,12 +23,13 @@
 }
 
 .card__separator {
-  border: 2px solid rgba(255, 104, 91, 1);
+  border: 2px solid var(--accent-color);
   max-width: 50px;
 }
 
 .card__text {
-  font-family: 'Montserrat', sans-serif;
+  color: rgba(115, 115, 115, 1);
+  font-family: var(--main-font), sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.43;

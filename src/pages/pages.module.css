@@ -1,8 +1,8 @@
 .headline {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--main-font), sans-serif;
   font-size: clamp(1.75rem, 1.0898rem + 2.8169vw, 3.625rem);
   font-weight: 700;
-  color: rgba(37, 43, 66, 1);
+  color: var(--headlines-color);
   line-height: 1.4;
   max-width: 727px;
   margin-bottom: 35px;
